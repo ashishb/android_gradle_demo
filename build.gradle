@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.+'
+    }
+}
+apply plugin: 'android'
+
+android {
+    compileSdkVersion 'android-20'
+    buildToolsVersion '21.1.2'
+
+    defaultConfig {
+      testApplicationId "net.ashishb.TestAndroidApp.test"
+      testInstrumentationRunner "android.test.InstrumentationTestRunner"
+      testHandleProfiling true
+      testFunctionalTest true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+}
